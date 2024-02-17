@@ -42,36 +42,48 @@ var primerElemento = radiologia.shift();
 var ultimoElemento = radiologia.pop();
 
 //Ejercicio 3 - Listado hora dentales.
-document.write('<p class="parrafo";>Ejercicio 3 - Listado horas dentales.</p>');
-for(let i = 0; i < dental.length; i++){
-    document.write(`<p> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision}</p>`);
-    document.write(`<p class="separador";></p>`)
-}
+document.write('<p class="parrafo";>Ejercicio 3 - Listado horas dentales</p>');
+const citas = dental.map(cita => {
+   return `<p class="separador";> ${cita.hora} - ${cita.especialista} - ${cita.paciente} - ${cita.rut} - ${cita.prevision}</p>`;
+   
+});
+
+document.write(citas.join(''));
+
+// for(let i = 0; i < dental.length; i++){
+//     document.write(`<p> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision}</p>`);
+//     document.write(`<p class="separador";></p>`)
+// }
 
 //Ejercicio 4 - Listado de todos los pacientes.
-document.write('<p class="parrafo";>Ejercicio 4 - Listado de todos los pacientes.</p>');
+document.write('<p class="parrafo";>Ejercicio 4 - Listado de todos los pacientes</p>');
 let areas = [ radiologia, traumatologia, dental]
-for (let area of areas) {
-    for (let cita of area) {
+
+areas.forEach(area => {
+    area.forEach(cita => {
         document.write(`<p>${cita.paciente}</p>`);
-    }
-}
+    });
+});
 
 //Ejercicio 5 - Listado de pacientes ISAPRE en dental.
-document.write('<p class="parrafo";>Ejercicio 5 - Listado de pacientes ISAPRE en dental.</p>');
-for( i=0; i<dental.length; i++){
-    if(dental[i].prevision === "ISAPRE"){
-        document.write(`<p>${dental[i].paciente}-${dental[i].prevision}</p>`);
-    }
-}
+document.write('<p class="parrafo";>Ejercicio 5 - Listado de pacientes ISAPRE en dental</p>');
+var pacientesIsapre = dental.filter((dental) => dental.prevision === "ISAPRE");
+pacientesIsapre.forEach(dental =>{document.write(`<p>${dental.paciente}-${dental.prevision}</p>`)});
+// for( i=0; i<dental.length; i++){
+//     if(dental[i].prevision === "ISAPRE"){
+//         document.write(`<p>${dental[i].paciente}-${dental[i].prevision}</p>`);
+//     }
+// }
 
 //Ejercicio 6 - Listado de pacientes Fonasa en Traumatologia.
-document.write('<p class="parrafo";>Ejercicio 6 - Listado de pacientes Fonasa en traumatologia.</p>');
-for( i=0; i<traumatologia.length; i++){
-    if(traumatologia[i].prevision === "FONASA"){
-        document.write(`<p>${traumatologia[i].paciente}-${traumatologia[i].prevision}</p>`);
-    }
-}
+document.write('<p class="parrafo";>Ejercicio 6 - Listado de pacientes Fonasa en traumatologia</p>');
+var pacientesFonasa = traumatologia.filter((traumatologia) => traumatologia.prevision === "FONASA");
+pacientesFonasa.forEach(traumatologia => {document.write(`<p>${traumatologia.paciente}-${traumatologia.prevision}</p>`)});
+// for( i=0; i<traumatologia.length; i++){
+//     if(traumatologia[i].prevision === "FONASA"){
+//         document.write(`<p>${traumatologia[i].paciente}-${traumatologia[i].prevision}</p>`);
+//     }
+// }
 
 //Agregar código para el desafio 2 aquí
 document.write('<p class="parrafo";>Otros Datos:</p>');
