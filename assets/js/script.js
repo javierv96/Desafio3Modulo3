@@ -28,11 +28,26 @@ var dental = [
 ];
 //Agregar código para el desafio 2 aquí
 
+//Ejercicio 1 - agregar citas a traumatologia utilizando push
+traumatologia.push(
+    {hora: '09:00', especialista: 'RENÉ POBLETE',   paciente: 'ANA GELLONA',    rut: '13123329-7', prevision: 'ISAPRE'},
+    {hora: '09:30', especialista: 'MARIA SOLAR',    paciente: 'RAMIRO ANDRADE', rut: '12221451-K', prevision: 'FONASA'},
+    {hora: '10:00', especialista: 'RAUL LOYOLA',    paciente: 'CARMEN ISLA',    rut: '10112348-3', prevision: 'ISAPRE'},
+    {hora: '10:30', especialista: 'ANTONIO LARENAS',paciente: 'PABLO LOAYZA',   rut: '13453234-1', prevision: 'ISAPRE'},
+    {hora: '12:00', especialista: 'MATIAS ARAVENA', paciente: 'SUSANA POBLETE', rut: '14345656-6', prevision: 'FONASA'}
+);
+
+//Ejercicio 2 - Eliminar el primer y ultimo elemento del arreglo radiologia, utilizando shift y pop.
+var primerElemento = radiologia.shift();
+var ultimoElemento = radiologia.pop();
+
+//Ejercicio 3 - Listado hora dentales.
 document.write('<p class="parrafo";>Ejercicio 3 - Listado horas dentales.</p>');
 for(let i = 0; i < dental.length; i++){
-    document.write(`<p> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision}</p>`);
+    document.write(`<p> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision}</p>`)
 }
 
+//Ejercicio 4 - Listado de todos los pacientes.
 document.write('<p class="parrafo";>Ejercicio 4 - Listado de todos los pacientes.</p>');
 let areas = [ radiologia, traumatologia, dental]
 for (let area of areas) {
@@ -41,6 +56,7 @@ for (let area of areas) {
     }
 }
 
+//Ejercicio 5 - Listado de pacientes ISAPRE en dental.
 document.write('<p class="parrafo";>Ejercicio 5 - Listado de pacientes ISAPRE en dental.</p>');
 for( i=0; i<dental.length; i++){
     if(dental[i].prevision === "ISAPRE"){
@@ -48,6 +64,7 @@ for( i=0; i<dental.length; i++){
     }
 }
 
+//Ejercicio 6 - Listado de pacientes Fonasa en Traumatologia.
 document.write('<p class="parrafo";>Ejercicio 6 - Listado de pacientes Fonasa en traumatologia.</p>');
 for( i=0; i<traumatologia.length; i++){
     if(traumatologia[i].prevision === "FONASA"){
