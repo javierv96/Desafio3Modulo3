@@ -44,7 +44,8 @@ var ultimoElemento = radiologia.pop();
 //Ejercicio 3 - Listado hora dentales.
 document.write('<p class="parrafo";>Ejercicio 3 - Listado horas dentales.</p>');
 for(let i = 0; i < dental.length; i++){
-    document.write(`<p> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision}</p>`)
+    document.write(`<p> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision}</p>`);
+    document.write(`<p class="separador";></p>`)
 }
 
 //Ejercicio 4 - Listado de todos los pacientes.
